@@ -1,15 +1,14 @@
-/* import Container from 'react-bootstrap/Container';
+import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-export default function CollapsibleExample(props) {
+export default function NavBarExample(props) {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-
-        <Navbar.Brand href="#home" className='text-warning'>Carbon Cloud Dashboard</Navbar.Brand>       
+        <Navbar.Brand href="#home" className='text-warning'>Carbon Cloud Dashboard</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -28,7 +27,7 @@ export default function CollapsibleExample(props) {
               <i className="fa-solid fa-pen fa-lg text-warning mx-2"></i>
               <i className="fa-solid fa-bell fa-lg text-warning mx-2"></i>
               <i className="fa-solid fa-user fa-lg text-warning mx-2"></i>
-              <i className="fa-solid fa-wheelchair fa-lg text-warning mx-2" onClick={ ()=>{props.setAccessibility(true)} }></i>
+              <i className="fa-solid fa-wheelchair fa-lg text-warning mx-2" onClick={ () => { props.changeState(!props.state)} }></i>
             </Nav.Link>
 
           </Nav>
@@ -37,4 +36,3 @@ export default function CollapsibleExample(props) {
     </Navbar>
   );
 }
- */
