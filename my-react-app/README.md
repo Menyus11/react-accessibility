@@ -1,2 +1,2 @@
-Learning React Contaxt
+Learning React Context
 
