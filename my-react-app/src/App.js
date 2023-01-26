@@ -26,37 +26,35 @@ function App() {
   return (
     <ThemeContext.Provider value={isAccessibility}>
       <div className="App" style={{ backgroundColor: "#2596be" }}>
-
         <header>
           <h1 className="text-dark">Változó idézetek, híres emberektől.</h1>
         </header>
-
         <nav>
-          <ExampleNavbar setAccessibility={setAccessibility} />
+          <ExampleNavbar setAccessibility={setAccessibility}/>
         </nav>
-
         <main className='p-3'>
           <ArrayContext.Provider value={quotesArray}>
-            <MainExample />
+            <MainExample/>
           </ArrayContext.Provider>
         </main>
-
       </div>
     </ThemeContext.Provider>
   );
 }
 
-function ExampleNavbar({ setAccessibility }) {
+function ExampleNavbar({setAccessibility}) {
 
   const accessibility = useContext(ThemeContext);
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
+        {/* <Navbar.Brand href="#home" className='text-warning'>Carbon Cloud Dashboard</Navbar.Brand> */}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Form className="d-flex mx-5">
+            
               <Form.Label>
                 <div>
                   <label htmlFor='inputSearch' className='text-warning fs-4 mx-3'><b>Keresnék!</b></label>
@@ -64,6 +62,7 @@ function ExampleNavbar({ setAccessibility }) {
               </Form.Label>
 
               <Form.Control
+              tabIndex={1}
                 id='inputSearch'
                 type="search"
                 validated="false"
@@ -72,20 +71,21 @@ function ExampleNavbar({ setAccessibility }) {
                 aria-label="Search"
               />
 
-              <Button variant="outline-warning">Search</Button>
+              <Button variant="outline-warning" tabIndex={2}>Search</Button>
             </Form>
           </Nav>
           <Nav>
-            <Nav.Link>
+            <Nav.Link tabIndex={6}>
               <i className="fa-solid fa-pen fa-lg text-warning mx-2"></i>
             </Nav.Link>
-            <Nav.Link>
+
+            <Nav.Link tabIndex={5}>
               <i className="fa-solid fa-bell fa-lg text-warning mx-2"></i>
             </Nav.Link>
-            <Nav.Link>
+            <Nav.Link tabIndex={4}>
               <i className="fa-solid fa-user fa-lg text-warning mx-2"></i>
             </Nav.Link>
-            <Nav.Link tabIndex={1}>
+            <Nav.Link tabIndex={3}>
               <i className="fa-solid fa-wheelchair fa-lg text-warning mx-2" onClick={() => { setAccessibility(!accessibility) }}></i>
             </Nav.Link>
           </Nav>
@@ -96,7 +96,6 @@ function ExampleNavbar({ setAccessibility }) {
 }
 
 function MainExample() {
-
   const accessibility = useContext(ThemeContext);
   const quotesArrayNow = useContext(ArrayContext);
 
@@ -118,7 +117,7 @@ function MainExample() {
               </Card.Text>
               <div className='d-flex justify-content-start'>
                 <a href='https://pakwired.com/100-best-quotes-time'>
-                  <Button className={accessibility ? "btn-warning" : "btn-primary"} >Érdekel<i className="fa-solid fa-arrow-right px-1"></i></Button>
+                  <Button className={accessibility ? "btn-warning" : "btn-primary"} tabIndex={index + 7} >Érdekel<i className="fa-solid fa-arrow-right px-1"></i></Button>
                 </a>
               </div>
             </Card.Body>
