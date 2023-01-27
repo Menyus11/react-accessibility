@@ -15,8 +15,6 @@ function App() {
   const [isAccessibility, setAccessibility] = useState(false);
   const [quotesArray, setQuotesArray] = useState([]);
 
-
-
   useEffect(() => {
 
     const randomArrayNow = [];
@@ -30,8 +28,6 @@ function App() {
         setQuotesArray(randomArrayNow);
       });
   }, []);
-
-
 
   return (
     <ThemeContext.Provider value={isAccessibility}>
