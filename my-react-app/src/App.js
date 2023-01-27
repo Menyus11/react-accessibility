@@ -59,7 +59,6 @@ function ExampleNavbar({ setAccessibility }) {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        {/* <Navbar.Brand href="#home" className='text-warning'>Carbon Cloud Dashboard</Navbar.Brand> */}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -94,7 +93,7 @@ function ExampleNavbar({ setAccessibility }) {
             <Nav.Link>
               <i className="fa-solid fa-user fa-lg text-warning mx-2"></i>
             </Nav.Link>
-            <Nav.Link tabIndex={1}>
+            <Nav.Link>
               <i className="fa-solid fa-wheelchair fa-lg text-warning mx-2" onClick={() => { setAccessibility(!accessibility) }}></i>
             </Nav.Link>
           </Nav>
